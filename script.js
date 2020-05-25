@@ -78,6 +78,15 @@ enerates a random password and takes in two arguments:
   (see #5) the password should have. 
 If the second argument is greater than the first, the function should return false.
 */
+const shuffle = (myString) => {
+  let newString = myString;
+  for (let k = myString.length-1; k > 0; k--){
+    const pos = Math.floor(Math.random()*(k-1))
+    newString = newString.substring(0,pos)+newString[k]+newString.substring() 
+  }
+}
+
+
 const mediumPasswordGenerator = (num, numSpecials) => {
   const alphanums = "abcdefghijklmnopqrstuvwxyz0123456789"
   const specials = "!@#$%^_ -";
