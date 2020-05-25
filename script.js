@@ -82,23 +82,30 @@ const shuffle = (myString) => {
   let newString = myString;
   for (let k = myString.length-1; k > 0; k--){
     const pos = Math.floor(Math.random()*(k-1))
-    newString = newString.substring(0,pos)+newString[k]+newString.substring() 
+    newString = newString.substring(0,pos)+newString[k]+newString.substring(k+1)
   }
+  return newString
 }
 
 
 const mediumPasswordGenerator = (num, numSpecials) => {
   const alphanums = "abcdefghijklmnopqrstuvwxyz0123456789"
   const specials = "!@#$%^_ -";
+  let password = ""
   if (numSpecials > num) {
     return false;
   }
-  for (let i = 0; i < num; i++) {
-    
+  for (let i = 0; i < numSpecials; i++) {
+    password += specials[Math.floor(Math.random()*specials.length)]
   }
-  
+    for (let i = numSpecials; i < num; i++) {
+    password += alphanums[Math.floor(Math.random()*alphanums.length)]
+  }
+  console.log(password)
+  password = shuffle(password)
+  return password;
 } 
 
-mediumPasswordGenerator(5, 2) 
+console.log(mediumPasswordGenerator(5, 2)) 
 // Returns "a&g$c" or "BU#7!" or "^%876" or any other 5 character string with two special characters.
-mediumPasswordGenerator(7, 10) // Returns false
+console.log(mediumPasswordGenerator(7, 10)) // Returns false
