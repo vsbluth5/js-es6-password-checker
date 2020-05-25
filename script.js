@@ -60,8 +60,6 @@ const requireSpecialCharacters = password => {
     for (const special of specials) {
       if (symbol == special) {
         count += 1;
-        console.log(symbol);
-        console.log(count);
       }
     }
   }
@@ -72,3 +70,26 @@ const requireSpecialCharacters = password => {
 console.log(requireSpecialCharacters("mighty-Morphin_p0wer Rangers!")); // Returns true
 console.log(requireSpecialCharacters("hereWeG0!")); // Returns false
 console.log(requireSpecialCharacters("ohnoanotherbadguy")); // Returns false
+
+/*
+a function called mediumPasswordGenerator that g
+enerates a random password and takes in two arguments: 
+  the total length of the password and the number of special characters 
+  (see #5) the password should have. 
+If the second argument is greater than the first, the function should return false.
+*/
+const mediumPasswordGenerator = (num, numSpecials) => {
+  const alphanums = "abcdefghijklmnopqrstuvwxyz0123456789"
+  const specials = "!@#$%^_ -";
+  if (numSpecials > num) {
+    return false;
+  }
+  for (let i = 0; i < num; i++) {
+    
+  }
+  
+} 
+
+mediumPasswordGenerator(5, 2) 
+// Returns "a&g$c" or "BU#7!" or "^%876" or any other 5 character string with two special characters.
+mediumPasswordGenerator(7, 10) // Returns false
