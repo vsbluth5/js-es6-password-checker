@@ -51,7 +51,17 @@ console.log(checkInvalidCharacters("batman and robin")) // Returns true
 console.log(checkInvalidCharacters("jokerAndPenguin")) // Returns false
 
 const requireSpecialCharacters = (password) => {
-  return (password.includes(" ") || password.includes("!") ||
-     password.includes("@") || password.includes("#") ||
-      password.includ
+  const specials = ["!", "@", "#", "$", "%", "^", "_"]
+  let count = 0
+  for (const char of password) {
+    if (char in specials){
+      count += 1
+    }
+    return count >= 2
+    
+  }
 }
+
+console.log(requireSpecialCharacters("mighty-Morphin_p0wer Rangers!")) // Returns true
+console.log(requireSpecialCharacters("hereWeG0!")) console.log(// Returns false
+console.log(requireSpecialCharacters("ohnoanotherbadguy")) // Returns false
