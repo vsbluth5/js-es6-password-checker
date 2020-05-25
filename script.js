@@ -82,7 +82,8 @@ const shuffle = (myString) => {
   let newString = myString;
   for (let k = myString.length-1; k > 0; k--){
     const pos = Math.floor(Math.random()*(k-1))
-    newString = newString.substring(0,pos)+newString[k]+newString.substring(k+1)
+    newString = newString.substring(0,pos)+newString[k]+newString.substring(pos+1, k)+newString[pos]+newString.substring(k+1)
+    // console.log(newString)
   }
   return newString
 }
@@ -109,3 +110,5 @@ const mediumPasswordGenerator = (num, numSpecials) => {
 console.log(mediumPasswordGenerator(5, 2)) 
 // Returns "a&g$c" or "BU#7!" or "^%876" or any other 5 character string with two special characters.
 console.log(mediumPasswordGenerator(7, 10)) // Returns false
+console.log(mediumPasswordGenerator(5, 2)) 
+console.log(mediumPasswordGenerator(5, 2)) 
