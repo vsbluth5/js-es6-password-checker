@@ -41,8 +41,17 @@ it should return true. If the string doesn't
 contain one of those characters, it should return false.
 */
 const checkInvalidCharacters = (password) => {
-  if (password.co)
+  return (password.includes(" ") || password.includes("!") ||
+     password.includes("@") || password.includes("#") ||
+      password.includes("*") || password.includes("(") ||
+      password.includes(")"))
 }
 
 console.log(checkInvalidCharacters("batman and robin")) // Returns true
 console.log(checkInvalidCharacters("jokerAndPenguin")) // Returns false
+
+const requireSpecialCharacters = (password) => {
+  return (password.includes(" ") || password.includes("!") ||
+     password.includes("@") || password.includes("#") ||
+      password.includ
+}
